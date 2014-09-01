@@ -2,5 +2,5 @@
 
 Built on the Laravel PHP framework, Ask Twilio lets you ask a question similar to "Ask the Magic 8-ball" and texts you and your friends the question and answer.
 
-View working site on: http://askstu.us
+View working site at: http://askstu.us
 
