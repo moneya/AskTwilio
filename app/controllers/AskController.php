@@ -36,8 +36,8 @@ class AskController extends \BaseController {
 
         $answer = $this->getAnswer();
 
-        Sms::send(array('to'=> $this->formatNumber($phone1), 'text'=> $name.' asked the question: '.$question. ' Answer: '.$answer));
-        Sms::send(array('to'=> $this->formatNumber($phone2), 'text'=> $name.' asked the question: '.$question. ' Answer: '.$answer));
+        Sms::send(array('to'=> $this->formatNumber($phone1), 'text'=> $name.' asked the question: '.$question. ' Answer: '.$answer.' (ask a question at askstu.us)'));
+        Sms::send(array('to'=> $this->formatNumber($phone2), 'text'=> $name.' asked the question: '.$question. ' Answer: '.$answer.' (ask a question at askstu.us)'));
         return View::make('done');
 	}
 
