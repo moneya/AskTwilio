@@ -12,7 +12,6 @@
     <![endif]-->
   </head>
   <body>
-    <section id="background-color"></section>
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4">
@@ -26,13 +25,10 @@
               <input class="form-control" type="tel"  name="phone2" placeholder="Your Friends Phone #"/>
               <h5>{{{ $errors->first('question') }}}</h5>
               <textarea class="form-control" name="question" placeholder="Ask a question..." rows="3"></textarea>
-              <input class="btn btn-primary center-text" type="submit" value="Ask" />
+              <input class="btn btn-danger center-text" type="submit" value="Ask" />
           </form>
       </div>
       <div class="col-md-4"></div>
     </div>
-    <footer>
-        <a href="https://www.twilio.com/" style="text: decoration: none; width: 135px; height: 0; overflow: hidden; padding-top: 44px; background: url(https://www.twilio.com/packages/company/img/logos_icon_poweredbylarge.png) no-repeat;">powered by Twilio™</a>
-    </footer>
   </body>
 </html>
