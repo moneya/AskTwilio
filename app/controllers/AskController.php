@@ -9,10 +9,10 @@ class AskController extends \BaseController {
 
 	public function create()
 	{
-        $name     = Input::get('name');
-        $phone1   = Input::get('phone1');
-        $phone2   = Input::get('phone2');
-        $question = Input::get('question');
+        $name     = trim(Input::get('name'));
+        $phone1   = $this->formatNumber(Input::get('phone1'));
+        $phone2   = $this->formatNumber(Input::get('phone2'));
+        $question = trim(Input::get('question'));
 
         $validator = Validator::make(
             array(
@@ -34,8 +34,18 @@ class AskController extends \BaseController {
             return Redirect::to('/')->withErrors($validator);
         }
 
-        Sms::send(array('to'=>$phone1, 'text'=>$name.' asked the question: '.$question. 'Answer: 100% Yes!'));
+        Sms::send(array('to'=> $phone1, 'text'=> $name.' asked the question: '.$question. ' Answer: 100% Yes!'));
+        Sms::send(array('to'=> $phone2, 'text'=> $name.' asked the question: '.$question. ' Answer: 100% Yes!'));
         return 'tst';
 	}
+
+    private function formatNumber($number){
+        $number = preg_replace("/[^0-9]/", "", $number);
+        if(substr($number, 0, 1) === 1 )
+        {
+            return '+'.$number;
+        }
+        return '+1'.$number;
+    }
 
 }
