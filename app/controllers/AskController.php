@@ -38,7 +38,7 @@ class AskController extends \BaseController {
 
         Sms::send(array('to'=> $this->formatNumber($phone1), 'text'=> $name.' asked the question: '.$question. ' Answer: '.$answer));
         Sms::send(array('to'=> $this->formatNumber($phone2), 'text'=> $name.' asked the question: '.$question. ' Answer: '.$answer));
-        return 'tst';
+        return View::make('done');
 	}
 
     private function cleanNumber($number)

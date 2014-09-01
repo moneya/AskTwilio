@@ -15,7 +15,6 @@ Route::get('/', 'AskController@index');
 
 Route::post('/', 'AskController@create');
 
-Route::get('/test', function(){
-    Sms::send(array('to'=>'+15083142814', 'text'=>'hello world'));
-    return 'sms sent';
+Route::get('/done', function(){
+    return View::make('done');
 });
