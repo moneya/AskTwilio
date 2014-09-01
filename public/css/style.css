@@ -1,3 +1,12 @@
+body{
+    background: url(/img/background.svg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Roboto, Verdana, sans-serif;
+}
+
 .center-text{
     width: 100%;
     text-align: center;
@@ -5,4 +14,13 @@
 
 .form-control{
     margin: 20px 0px;
+}
+
+h1{
+    font-size: 4em;
+}
+
+h5{
+    color: red;
+    font-weight: 600;
 }
